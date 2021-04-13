@@ -50,9 +50,9 @@ logging.debug('Fitting the Artificial Neural Network to the trainging set')
 classifier.fit(x_train, y_train, batch_size = 10, epochs = 100)
 logging.debug('Predicting the Test set results')
 y_pred = classifier.predict(x_test)
+y_pred = (y_pred > 0.85)
 logging.debug('Predicted results')
 logging.debug(y_pred)
-y_pred = (y_pred > 0.85)
 logging.debug('Making the confusion matrix')
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_pred, y_test)
@@ -73,7 +73,6 @@ caa:
 thall:
 """
 new_prediction = classifier.predict(sc.transform(np.array([[64, 1, 0, 185, 351, 1, 2, 240, 1, 1.8, 2, 0, 12]])))
+new_prediction = (new_prediction > 0.85)
 logging.debug('Single observation prediction')
 logging.debug(new_prediction)
-new_prediction = (new_prediction > 0.85)
-
