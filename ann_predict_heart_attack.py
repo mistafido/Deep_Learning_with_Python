@@ -1,3 +1,4 @@
+import logging
 logging.basicConfig(filename='ann__predict_heart_attack.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logging.debug('Start of Program')
 logging.debug('Importing the Libraries')
